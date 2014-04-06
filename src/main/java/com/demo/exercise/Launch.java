@@ -15,15 +15,11 @@ public class Launch {
     public static void main(String[] args) {
         DataProcessor processor = new DataProcessor();
         List<Company> companies = new ArrayList<>();
-        if (args.length >0) {
-            companies = processor.readCSV(args[0]);
-        } else {
-            companies = processor.readCSV( "companyData.csv");
-        }
-
+        // Input data taken from resources folder
+        companies = processor.readCSV("companyData.csv");
         for (Company company : companies) {
             StockValue value = processor.getHighestStockValue(company);
-            System.out.println("Company : " + company.getName() + " >>>>> Highest  " + value);
+            System.out.println(company.getName() + " >>>>> Highest " + value);
         }
 
     }
