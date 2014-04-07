@@ -19,6 +19,12 @@ import java.util.List;
  */
 public class DataProcessor {
 
+    private String csvFile;
+
+    public DataProcessor(String csvFile) {
+        this.csvFile = csvFile;
+    }
+
     /**
      * Method to store data.
      *
@@ -51,7 +57,7 @@ public class DataProcessor {
      * @param csvFile
      * @return collection of companies with their stock data
      */
-    public final List<Company> readCSV(final String csvFile) {
+    public final List<Company> readCSV() {
         BufferedReader br = null;
         String line;
         final String cvsSplitBy = ",";

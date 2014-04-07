@@ -7,12 +7,9 @@ package com.demo.exercise.controller;
 import com.demo.exercise.model.Company;
 import com.demo.exercise.model.StockValue;
 import java.util.List;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -20,23 +17,21 @@ import static org.junit.Assert.*;
  */
 public class DataProcessorTest {
     
-    public DataProcessorTest() {
-    }
+    private static DataProcessor dataProcessor;
+    private List<Company> companies;
+    
+    ////////////////////////////////////////////
+    // Test Data given in csv file.
+    //==========================================
+    //Year	Month	Company A Company B
+    //==========================================
+    //1990	Jan	5000	
+    //2005	Dec	56        9000
+    ///////////////////////////////////////////
     
     @BeforeClass
     public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
+        dataProcessor=new DataProcessor("companyTestData.csv");
     }
 
     /**
@@ -44,14 +39,8 @@ public class DataProcessorTest {
      */
     @Test
     public void testReadCSV() {
-        System.out.println("readCSV");
-        String csvFile = "";
-        DataProcessor instance = new DataProcessor();
-        List expResult = null;
-        List result = instance.readCSV(csvFile);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        this.companies=dataProcessor.readCSV();
+        Assert.assertEquals("Total Companies", 2, this.companies.size());
     }
     
     /**
@@ -59,14 +48,13 @@ public class DataProcessorTest {
      */
     @Test
     public void testGetHighestStockValue() {
-        System.out.println("getHighestStockValue");
-        Company company = null;
-        DataProcessor instance = new DataProcessor();
-        StockValue expResult = null;
-        StockValue result = instance.getHighestStockValue(company);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        for (Company company : companies) {
+            StockValue stockValue= dataProcessor.getHighestStockValue(company);
+            if(company.getName().equals("Company A")){
+                
+            }
+            
+        }
     }
 
     
