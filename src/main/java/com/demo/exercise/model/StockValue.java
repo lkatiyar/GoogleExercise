@@ -22,8 +22,8 @@ public class StockValue {
 
     
     /* **************************************** */
-	// Constructors
-	/* **************************************** */
+    // Constructors
+    /* **************************************** */
     /**
      * Constructor for Stock Value.
      * @param year : year value
