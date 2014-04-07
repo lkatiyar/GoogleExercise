@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package com.demo.exercise.controller;
 
 import com.demo.exercise.model.StockValue;
@@ -11,7 +5,6 @@ import java.util.Comparator;
 
 /**
  * Comparator class for Stock Value Sorting.
- * 
  * @author lkatiyar
  */
 public class StockComparator implements Comparator<StockValue> {

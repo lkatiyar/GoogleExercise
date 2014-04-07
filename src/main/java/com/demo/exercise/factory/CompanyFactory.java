@@ -5,20 +5,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- *
- * @author lkatiyar
+ * Factory Class to get Company Instance.
  */
 public class CompanyFactory {
 
     /* **************************************** */
     // Private Static Fields
     /* **************************************** */
+	
     /** Collection to store created Company Objects */
     private static final Map<String, Company> companies = new HashMap<>();
 
     /**
      * To get Company Instance.
-     *
      * @param name : Company Name
      * @return : Company Object
      */

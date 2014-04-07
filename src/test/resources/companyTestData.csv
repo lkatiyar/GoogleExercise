@@ -1,3 +1,4 @@
 Year,Month,Company A,Company B
 1990,Jan,5000,
-2005,Dec,56,9000
+2005,Dec,,9000
+2013,Jul,,8999
